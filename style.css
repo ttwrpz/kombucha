@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(180deg, green, lightgreen);
+    min-height: 100svh;
+}
+
+.page {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.column-left {
+    flex: 1;
+}
+
+.column-right {
+    flex: 1;
+}
+
+img {
+    max-width: 100px;
+}
+
+.image-container {
+    position: relative;
+    width: 150px;
+    height: 300px;
+}
+
+#img_kombucha {
+    width: 150px;
+    max-width: 150px;
+}
+
+#img_tea {
+    z-index: 1;
+    position: absolute;
+    transform: rotate(341deg);
+    top: 90px;
+    width: 150px;
+    max-width: fit-content;
+}
+
+#img_scoby {
+    z-index: 2;
+    position: absolute;
+    transform: rotate(18deg);
+    left: 100%;
+    width: 150px;
+    max-width: fit-content;
+}
+
+#img_sugar {
+    z-index: 3;
+    position: absolute;
+    transform: rotate(20deg);
+    top: 150px;
+    left: 150%;
+    width: 150px;
+    max-width: fit-content;
+}
+
+@media screen and (max-width: 750px) {
+    .column {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .image-container {
+        margin-left: 15%;
+    }
+
+    .image-container > img {
+        width: 100px !important;
+    }
+
+    #img_scoby {
+        left: 50%;
+    }
+
+    #img_sugar {
+        left: 85%;
+    }
+}

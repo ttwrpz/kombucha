@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tea Calc</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+</head>
+<body>
+
+<div class="page"><!-- Page -->
+    <div>
+        <h1>Kombucha</h1>
+        <hr/>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, expedita necessitatibus reiciendis aliquid doloribus id dolores illum tempora rem harum architecto, minima magnam optio illo, perferendis iste! Numquam, neque quia!
+        </p>
+    </div><!-- Orange Box -->
+    <div class="column red">
+        <div class="column-left">
+            <div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At illo deleniti accusantium ipsa aut exercitationem modi, aliquam dolorem voluptates vel illum in neque nesciunt cum ea porro. Accusamus, voluptates? Reiciendis!</p>
+            </div>
+            <div>
+                <h2>วัตถุดิบ อุปกรณ์</h2>
+                <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div>
+                <img src="./images/kombucha.jpg" id="img_kombucha" alt="Image" />
+            </div>
+        </div><!-- Left Col -->
+        <div class="column-right">
+            <div class="calculator">
+                <h2>Calculating for you</h1>
+        
+                <input type="number" min="1" id="tea">  
+                <button py-click="calc">Calculate</button>
+        
+                <div class="answer">
+                <p>
+                    Black Tea:
+                    <span class="answer" id="black-tea">-</span>
+                    gram/Liter
+                </p>
+                <p>
+                    Water:
+                    <span class="answer" id="water">-</span>
+                    Liter
+                </p>
+                <p>
+                    Sugar:
+                    <span class="answer" id="sugar">-</span>
+                    gram
+                </p>
+                <p>
+                    Scoby:
+                    <span class="answer" id="scoby">-</span>
+                    mL
+                </p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="./images/tea.jpg" id="img_tea" alt="Tea"/>
+                <img src="./images/scoby.jpg" id="img_scoby" alt="Scoby"/>
+                <img src="./images/sugar.jpg" id="img_sugar" alt="Sugar"/>
+            </div>
+            <div>
+                <h2>ขั้นตอน</h2>
+                <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div><!-- Right Col -->
+    </div><!-- Orange Box -->
+</div>
+
+<py-script>
+    from js import document
+
+    def calc(e):
+        value = document.getElementById('tea').value
+        
+        if value == "":
+            return
+
+        amount = float(value)
+
+        black_tea = amount * 4
+        water = amount * 1
+        sugar = amount * 65
+        scoby = amount * 100
+
+        document.getElementById('black-tea').textContent = black_tea
+        document.getElementById('water').textContent = water
+        document.getElementById('sugar').textContent = sugar
+        document.getElementById('scoby').textContent = scoby
+
+</py-script>
+</body>
+</html>
